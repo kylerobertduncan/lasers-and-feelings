@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import selectRandom from './selectRandom';
+import spaceAdventure from './spaceAdventure';
 import './App.css';
 
 function App() {
+
+  const [newStory, setNewStory] = useState({});
+
+  const generateStory = () => {
+    let thisStory = {}
+    for (let element in spaceAdventure) {
+      const selectedElement = selectRandom(spaceAdventure[element]);
+      thisStory[element] = selectedElement;
+    }
+    setNewStory(thisStory);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>LASERS AND FEELINGS</h1>
+      <button onClick={generateStory}>Tell me a story!</button>
+      <p>A threat...</p>
+      <p>{newStory.threat}</p>
+      <p>want(s) to...</p>
+      <p>{newStory.want}</p>
+      <p>the...</p>
+      <p>{newStory.target}</p>
+      <p>which will...</p>
+      <p>{newStory.result}</p>
     </div>
   );
 }
