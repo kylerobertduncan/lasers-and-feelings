@@ -14,4 +14,4 @@ Available at http://www.onesevendesign.com/laserfeelings/
 
 ### Display the complete sentance on the page
 - Join the components into a complete string
-- Print to the page
+- Print to the page 
