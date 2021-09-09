@@ -1,35 +1,35 @@
 const spaceAdventure = {
   threat: [
     "Zorgon the Conqueror",
-    "The Hive Armada",
-    "Rogue Captain",
-    "Space Pirates",
-    "Cyber Zombies",
-    "Alien Brain Worms"
+    "The hive armada",
+    "A rogue captain",
+    "Space pirates",
+    "Cyber zombies",
+    "Alien brain worms"
   ],
   want: [
-    "Destroy/Corrupt",
-    "Steal/Capture",
-    "Bond with",
-    "Protect/Empower",
-    "Build/Synthesize",
-    "Pacify/Occupy"
+    "destroy/corrupt",
+    "steal/capture",
+    "bond with",
+    "protect/empower",
+    "build/synthesize",
+    "pacify/occupy"
   ],
   target: [
-    "Space Pirate King/Queen",
-    "Void Crystals",
-    "Star Dreadnought",
-    "Quantum Tunnel",
-    "Ancient Space Ruin",
-    "Alien Artifact"
+    "space pirate monarch",
+    "void crystals",
+    "star dreadnought",
+    "quantum tunnel",
+    "ancient space ruin",
+    "alien artifact"
   ],
   result: [
-    "Destroy a solar system",
-    "Reverse time",
-    "Enslave a planet",
-    "Start a war/invasion",
-    "Rip a hole in reality",
-    "Alien Brain Worms"
+    "destroy a solar system",
+    "reverse time",
+    "enslave a planet",
+    "start a war/invasion",
+    "rip a hole in reality",
+    "fix everything"
   ]
 }
 

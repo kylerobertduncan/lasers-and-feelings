@@ -26,6 +26,7 @@ Available at http://www.onesevendesign.com/laserfeelings/
 - reconstruct sentance element
 
 ## stretch goals
+- automate capitalization and plurals
 - random character generator
 - random ship generator
 - save data to firebase
