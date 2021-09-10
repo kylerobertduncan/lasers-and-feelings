@@ -7,13 +7,27 @@ const spaceAdventure = {
     "Cyber zombies",
     "Alien brain worms"
   ],
+  // want: [
+  //   "destroy/corrupt",
+  //   "steal/capture",
+  //   "bond with",
+  //   "protect/empower",
+  //   "build/synthesize",
+  //   "pacify/occupy"
+  // ],
   want: [
-    "destroy/corrupt",
-    "steal/capture",
+    "destroy",
+    "corrupt",
+    "steal",
+    "capture",
     "bond with",
-    "protect/empower",
-    "build/synthesize",
-    "pacify/occupy"
+    "bond with", // to give equal chance of selection
+    "protect",
+    "empower",
+    "build",
+    "synthesize",
+    "pacify",
+    "occupy"
   ],
   target: [
     "space pirate monarch",
