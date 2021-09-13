@@ -44,7 +44,12 @@ const spaceAdventure = {
     "start a war/invasion",
     "rip a hole in reality",
     "fix everything"
-  ]
+  ],
+  // exclude: [
+  //   "a",
+  //   "the",
+  //   "with"
+  // ]
 }
 
 export default spaceAdventure;

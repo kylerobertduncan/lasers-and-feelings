@@ -4,7 +4,7 @@ const RandomSynonyms = (props) => {
   const { newStory } = props;
   // const [ synonym, setSynonym ] = useState("");
   // const [ synonymSearch, setSynonymSearch ] = useState("");
-  const [ randomStory, setRandomStory ] = useState({});
+  const [ randomStory, setRandomStory ] = useState([]);
 
   // useEffect(() => {
   //   const url = new URL('https://api.datamuse.com/words');
@@ -29,7 +29,7 @@ const RandomSynonyms = (props) => {
   //   }
   // })
 
-  const getRandomSynonyms = (newStory) => {
+  const getRandomSynonyms = async (newStory) => {
     for (let element in newStory) {
       // split to take apart each element
       const wordArray = newStory[element].split(" ")
@@ -45,18 +45,20 @@ const RandomSynonyms = (props) => {
         fetch(url)
           .then(response => response.json())
           .then((jsonResponse) => {
-            // console.log(jsonResponse[0].word);
+            console.log(jsonResponse[0].word);
+
+        let 
             randomArray = [...randomArray, jsonResponse[0].word]
+            setRandomStory(randomArray);
+
             // setRandomStory([element].randomArray);
-            // console.log(randomStory);
+
             // const synonym = jsonResponse[0].word
-            // console.log(synonym);
             // return(synonym);
           })
-          .then(() => {
-            console.log(randomArray);
-          })
-
+          // .then(() => {
+          //   console.log(randomStory);
+          // })
       })
     }
   }

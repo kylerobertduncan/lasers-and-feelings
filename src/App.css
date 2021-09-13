@@ -10,6 +10,8 @@ button {
 p {
   margin: 0 auto;
   max-width: 250px;
+  word-spacing: 10px;
+  line-height: 150%;
 }
 
 .element {

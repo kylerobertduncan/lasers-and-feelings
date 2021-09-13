@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import spaceAdventure from './spaceAdventure';
 import selectRandom from './selectRandom';
-import RandomSynonyms from './RandomSynonyms';
+// import RandomSynonyms from './RandomSynonyms';
+import PromiseTest from './PromiseTest';
 import './App.css';
 
 function App() {
 
-  const [newStory, setNewStory] = useState({});
+  const [currentStory, setCurrentStory] = useState({});
   
   const generateStory = () => {
     let thisStory = {}
@@ -14,19 +15,50 @@ function App() {
       const selectedElement = selectRandom(spaceAdventure[element]);
       thisStory[element] = selectedElement;
     }
-    setNewStory(thisStory);
+    setCurrentStory(thisStory);
   }
+
+  useEffect( () => {
+    generateStory();
+  }, [])
 
   return (
     <div className="App">
       <h1>Lasers &amp; Feelings</h1>
       <button onClick={generateStory}>Tell me a story!</button>
       <p>
-        <span className="element">{newStory.threat}</span> want(s) to <span className="element">{newStory.want}</span> the <span className="element">{newStory.target}</span> which will <span className="element">{newStory.result}</span>!
+        <span className="element">{currentStory.threat}</span> want(s) to <span className="element">{currentStory.want}</span> the <span className="element">{currentStory.target}</span> which will <span className="element">{currentStory.result}</span>!
       </p>
-      <RandomSynonyms newStory={newStory}/>
+      <PromiseTest currentStory={currentStory}/>
     </div>
   );
 }
 
 export default App;
+
+/*
+
+TRYING TO GET RANDOMIZED INDIVIDUAL WORDS BY CLICK
+
+  const getRandomSynonym = (phrase) => {
+    const url = new URL('https://api.datamuse.com/words');
+    url.search = new URLSearchParams({
+      ml: phrase, // ml = "means like"
+      max: 1
+    });
+    fetch(url)
+      .then(response => response.json())
+      .then((jsonResponse) => {
+        console.log(jsonResponse[0].word);
+      });
+  }
+
+  const handleWordClick = (e) => {
+    if (e.target.className == "element") {
+      // console.log(newStory);
+      // console.log(e.target);
+      console.log(e.target.textContent);
+    }
+  }
+
+*/
