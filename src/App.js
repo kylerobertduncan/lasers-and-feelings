@@ -3,6 +3,7 @@ import spaceAdventure from './spaceAdventure';
 import selectRandom from './selectRandom';
 // import RandomSynonyms from './RandomSynonyms';
 import PromiseTest from './PromiseTest';
+import LoopAPI from './LoopAPI';
 import './App.css';
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
       <p>
         <span className="element">{currentStory.threat}</span> want(s) to <span className="element">{currentStory.want}</span> the <span className="element">{currentStory.target}</span> which will <span className="element">{currentStory.result}</span>!
       </p>
-      <PromiseTest currentStory={currentStory}/>
+      {/* <PromiseTest currentStory={currentStory}/> */}
+      <LoopAPI currentStory={currentStory}/>
     </div>
   );
 }

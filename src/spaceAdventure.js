@@ -39,10 +39,16 @@ const spaceAdventure = {
   ],
   result: [
     "destroy a solar system",
+    "destroy a solar system",
+    "reverse time",
     "reverse time",
     "enslave a planet",
-    "start a war/invasion",
+    "enslave a planet",
+    "start a invasion",
+    "start a war",
     "rip a hole in reality",
+    "rip a hole in reality",
+    "fix everything",
     "fix everything"
   ],
   // exclude: [
