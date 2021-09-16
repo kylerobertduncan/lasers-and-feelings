@@ -17,3 +17,7 @@ p {
 .element {
   font-weight: bold;
 }
+
+.threat {
+  text-transform: capitalize;
+}
