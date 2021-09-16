@@ -11,8 +11,8 @@ function App() {
   const [currentStory, setCurrentStory] = useState({});
   
   const generateStory = () => {
-    let thisStory = {}
-    for (let element in spaceAdventure) {
+    const thisStory = {}
+    for (const element in spaceAdventure) {
       const selectedElement = selectRandom(spaceAdventure[element]);
       thisStory[element] = selectedElement;
     }

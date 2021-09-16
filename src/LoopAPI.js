@@ -4,48 +4,56 @@ import selectRandom from "./selectRandom";
 const LoopAPI = (props) => {
   const { currentStory } = props;
 
-  // console.log(currentStory);
-
   const [ newStory, setNewStory ] = useState({});
   
   const replaceCurrentStory = async () => {
     
+    // create a newStoryObject to store each string
+    const newStoryObject = { ...newStory }
+
     for (const element in currentStory) {
-  
-      // console.log(currentStory[element]);
-      const newElementArray = [];
+
+      // break the current element into an array
       const elementArray = currentStory[element].split(' ');
-      console.log(elementArray);
+      const newElementArray = [];
 
-      await Promise.all(
-        elementArray.map( async (wordToReplace) => {
+      for (const wordToReplace of elementArray) {
+        // add code to skip 'a', 'the', 'in' and 'with'
 
-          const url = new URL('https://api.datamuse.com/words');
-          url.search = new URLSearchParams({
-            ml: wordToReplace, // ml = "means like"
-            max: 10
-          });
+        // API fetch setup
+        const url = new URL('https://api.datamuse.com/words');
+        url.search = new URLSearchParams({
+          ml: wordToReplace, // ml = "means like"
+          max: 10
+        });
 
-          const response = await fetch(url);
-          const synonymsArray = await response.json();
-          const newWordObject = await selectRandom(synonymsArray);
-          newElementArray.push(newWordObject.word);
-          // console.log(newElementArray);
+        // call the API for 10 random synonyms
+        const response = await fetch(url);
+        // turn the synonyms in a json array
+        const synonymsArray = await response.json();
+          // add code to compare random options to 'likely to follow'
+        // choose a random word from the json array
+        const newWord = await selectRandom(synonymsArray).word;
+        // add that word to a replacement array
+        newElementArray.push(newWord);
+      }
 
-        })
-      )
+      // turn the replacement array into a string
       const newStoryElement = newElementArray.join(' ');
-      const newStoryObject = {...newStory}
-      // console.log(newStory);
+      // add the new string to the relevant story element
       newStoryObject[element] = newStoryElement;
-      setNewStory(newStoryObject)
     }
+    console.log(newStoryObject);
+    setNewStory(newStoryObject)
   }
 
 
   return (
     <div>
       <button onClick={replaceCurrentStory}>Generate Random Story</button>
+      <p>
+        <span className="element">{newStory.threat}</span> want(s) to <span className="element">{newStory.want}</span> the <span className="element">{newStory.target}</span> which will <span className="element">{newStory.result}</span>!
+      </p>
     </div>
   );
 }
