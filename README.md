@@ -11,6 +11,7 @@ Available at http://www.onesevendesign.com/laserfeelings/
 ### Map each element of the adventure sentance and randomly select one option
 x Make an app that randomly selects one item of an array
   - check for "/" character, choose one (or offer choice?)
+  - `split the options into differnt array items instead`
 - Add each choice to a "sentance" array/string
 
 ### Display the complete sentance on the page
