@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import selectRandom from "./selectRandom";
 
 const LoopAPI = (props) => {
@@ -58,10 +58,9 @@ const LoopAPI = (props) => {
     setNewStory(newStoryObject);
   }
 
-
   return (
     <div>
-      <button onClick={replaceCurrentStory}>Generate Random Story</button>
+      <button onClick={replaceCurrentStory}>Generate Some Chaos</button>
       <p>
         <span className="element threat">{newStory.threat}</span> want(s) to <span className="element">{newStory.want}</span> the <span className="element">{newStory.target}</span> which will <span className="element">{newStory.result}</span>!
       </p>

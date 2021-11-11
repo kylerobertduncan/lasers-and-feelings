@@ -1,8 +1,10 @@
 .App {
+  cursor: default;
   text-align: center;
 }
 
 button {
+  cursor: pointer;
   margin: 20px;
   padding: 10px;
 }

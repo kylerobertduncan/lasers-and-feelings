@@ -25,7 +25,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lasers &amp; Feelings</h1>
+      <a href="https://johnharper.itch.io/lasers-feelings" target="_blank" rel="noreferrer noopener">
+        <h1>Lasers &amp; Feelings</h1>
+      </a>
+      <h2>by John Harper</h2>
       <button onClick={generateStory}>Tell me a story!</button>
       <p>
         <span className="element">{currentStory.threat}</span> want(s) to <span className="element">{currentStory.want}</span> the <span className="element">{currentStory.target}</span> which will <span className="element">{currentStory.result}</span>!

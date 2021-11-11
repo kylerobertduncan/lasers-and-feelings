@@ -5,6 +5,9 @@ Available at http://www.onesevendesign.com/laserfeelings/
 
 ## pseudocode
 
+### Style & Attribution
+- [ ] add link to original game
+
 ### Create data object of original story prompts
 - Divided by adventure sentance structure
 
